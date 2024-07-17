@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap" rel="stylesheet"/>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="logo paused">
+        <div class="logo-image"></div>
+      </div>
+
+      <div class="playing">
+        <div class="playing-song">
+          <h5>Сейчас играет</h5>
+          <h3 class="playing-title">Трек не выбран</h3>
+          <p class="playing-artist"></p>
+        </div>
+        <div class="icons">
+          <img class="add-to-playlist" src="img/plus.png" alt="add-to-playlist" />
+          <img class="add-to-favorites" src="img/star.svg" alt="add-to-favorites" />
+        </div>
+      </div>
+      <div class="notifications"></div>
+      <div class="tracks">
+        <input id="search-input" type="text" class="search-input" placeholder="Поиск"/>
+        <table class="tracks-table"></table>
+      </div>
+      <div class="playlists-heading">
+        <h3>Плейлисты</h3>
+        <img src="img/plus.png" alt="create-new-playlist" />
+      </div>
+      <div class="playlists">
+        <table class="playlists-table">
+          <tbody class="playlists-table-tbody">
+            <tr id="all-tracks" class="not-selected">
+              <td>Все треки</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <audio id="audio" class="player"></audio>
+
+      <div class="control-panel">
+        <div class="nav-bar">
+          <button id="prev" class="action-btn"></button>
+          <button id="play" class="play-pause-btn play"></button>
+          <button id="next" class="action-btn"></button>
+        </div>
+
+        <div class="progress-bar">
+          <div class="current-time">00:00</div>
+          <input
+            type="range"
+            id="slider-progress"
+            class="slider"
+            value="0"
+            min="1"
+            max="100"
+          />
+          <div class="end-time">00:00</div>
+        </div>
+
+        <button id="shuffle" class="shuffle-off"></button>
+        <button id="repeat" class="repeat-off"></button>
+        <div class="volume-bar">
+          <div class="volume-icon-container">
+            <button class="volume-icon not-muted"></button>
+          </div>
+          <input
+            type="range"
+            id="slider-volume"
+            class="slider"
+            value="100"
+            min="1"
+            max="100"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
